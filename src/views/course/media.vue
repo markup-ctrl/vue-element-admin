@@ -35,6 +35,7 @@
         />
       </el-select>
     </div>
+    
     <el-table
       :key="tableKey"
       v-loading="listLoading"
@@ -180,7 +181,7 @@ import {
 } from "../../api/media";
 
 
-import { parseTime } from '@/utils'
+import { formatTime } from '@/utils'
 import Tinymce from "@/components/Tinymce/index";
 
 export default {
@@ -264,6 +265,16 @@ export default {
       }
     },
     addMedia() {
+       // addVideo初始化temp状态
+      this.temp ={
+        id: undefined,
+        try: "",
+        title: "",
+        price: "",
+        status:1,
+        content:""
+      }
+      
       this.dialogStatus = "create";
       this.dialogFormVisible = true;
       this.$nextTick(() => {
@@ -338,7 +349,7 @@ export default {
     async handleAdd() {
       let id = parseInt(Math.random() * 100) + 1024 // mock a id
       let time = new Date();
-      time = parseTime("yyyy-MM-dd hh:mm:ss", time);
+      time = formatTime("yyyy-MM-dd hh:mm:ss", time);
       console.log(time);
       let data = {
         id:id,
@@ -366,7 +377,7 @@ export default {
         console.log(123);
         console.log(this.temp);
         let time = new Date();
-        time = parseTime("yyyy-MM-dd hh:mm:ss", time);
+        time = formatTime("yyyy-MM-dd hh:mm:ss", time);
         console.log(time);
         this.temp.updated_time = time
         this.temp.status = parseInt(this.temp.status)
