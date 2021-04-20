@@ -86,32 +86,32 @@ export const constantRoutes = [
   {
     path:'/course',
     component:Layout,
-    redirect:'/course/picAddWord',
+    redirect:'/course/media',
     meta: { title: 'Course', icon: 'documentation', affix: true },
     children:[
       {
-        path:'/course/picAddWord',
-        component:()=>import('@/views/course/picAddWord'),
-        name:'PicAddWord',
-        meta: { title: 'Documentation', icon: 'documentation', affix: true }
+        path:'/course/media',
+        component:()=>import('@/views/course/media'),
+        name:'Media',
+        meta: { title: 'Media', icon: 'documentation', affix: true }
       },
       {
         path:'/course/video',
         component:()=>import('@/views/course/video'),
         name:'Video',
-        meta: { title: 'Documentation', icon: 'documentation', affix: true }
+        meta: { title: 'Video', icon: 'documentation', affix: true }
       },
       {
         path:'/course/audio',
         component:()=>import('@/views/course/audio'),
         name:'Audio',
-        meta: { title: 'Documentation', icon: 'documentation', affix: true }
+        meta: { title: 'Audio', icon: 'documentation', affix: true }
       },
       {
         path:'/course/column',
         component:()=>import('@/views/course/column'),
         name:'Column',
-        meta: { title: 'Documentation', icon: 'documentation', affix: true }
+        meta: { title: 'Column', icon: 'documentation', affix: true }
       },
     ]
   }
