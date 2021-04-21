@@ -53,6 +53,7 @@
         sortable="custom"
         align="center"
         width="80"
+        
       >
         <template slot-scope="{ row }">
           <span>{{ row.id }}</span>

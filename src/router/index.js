@@ -113,6 +113,13 @@ export const constantRoutes = [
         name:'Column',
         meta: { title: 'Column', icon: 'documentation', affix: true }
       },
+      {
+        path:'/course/column_detail',
+        hidden: true,
+        component:()=>import('@/views/course/columnDetail'),
+        name:"ColumnDetail",
+        meta: { title: 'ColumnDetail', icon: 'documentation', affix: true }
+      },
     ]
   }
   // {
