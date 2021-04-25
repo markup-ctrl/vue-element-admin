@@ -83,6 +83,7 @@ export const constantRoutes = [
       }
     ]
   },
+  //课程管理
   {
     path:'/course',
     component:Layout,
@@ -121,7 +122,62 @@ export const constantRoutes = [
         meta: { title: 'ColumnDetail', icon: 'documentation', affix: true }
       },
     ]
-  }
+  },
+  //用户管理
+  {
+    path:'/user',
+    component:Layout,
+    redirect:'/user/user',
+    children:[
+     {
+      path:'user',
+      component:() =>import('@/views/user/user'),
+      meta: { title: 'User', icon: 'documentation', affix: true },
+     }
+    ]
+   
+  },
+  //交易管理
+  {
+    path:'/deal',
+    component:Layout,
+    redirect:'/dael/ordermessage',
+    meta: { title: 'Deal', icon: 'documentation', affix: true },
+    children:[
+      {
+        path:'/dael/ordermessage',
+        component:()=>import('@/views/deal/order-message/index'),
+        name:'OrderMessage',
+        meta: { title: 'OrderMessage', icon: 'documentation', affix: true }
+      },
+      {
+        path:'/dael/assetmessage',
+        component:()=>import('@/views/deal/asset-message/index'),
+        name:'AssetMessage',
+        meta: { title: 'AssetMessage', icon: 'documentation', affix: true }
+      },
+      {
+        path:'/deal/paymessage',
+        component:()=>import('@/views/deal/pay-message'),
+        name:'PayMessage',
+        meta: { title: 'PayMessage', icon: 'documentation', affix: true }
+      },
+      // {
+      //   path:'/course/column',
+      //   component:()=>import('@/views/course/column'),
+      //   name:'Column',
+      //   meta: { title: 'Column', icon: 'documentation', affix: true }
+      // },
+      // {
+      //   path:'/course/column_detail',
+      //   hidden: true,
+      //   component:()=>import('@/views/course/columnDetail'),
+      //   name:"ColumnDetail",
+      //   meta: { title: 'ColumnDetail', icon: 'documentation', affix: true }
+      // },
+    ]
+  },
+
   // {
   //   path: '/documentation',
   //   component: Layout,
